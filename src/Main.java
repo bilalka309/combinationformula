@@ -1,7 +1,28 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner inp=new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        int n, r, sonuc;
+
+
+        System.out.println("C(n,r)");
+        System.out.print("n giriniz : ");
+        n = scan.nextInt();
+        System.out.print("r giriniz : ");
+        r = scan.nextInt();
+
+        sonuc = faktoriyelHesapla(n) / (faktoriyelHesapla(r) * faktoriyelHesapla(n - r));
+        System.out.println("C(" + n + "," + r + ") : " + sonuc);
+
+    }
+
+    static int faktoriyelHesapla(int x) {
+        int fak = 1;
+        for (int i = 1; i <= x; i++) {
+            fak *= i;
+        }
+        return fak;
+       /* Scanner inp=new Scanner(System.in);
         System.out.println("Küme eleman sayısını giriniz:");
         int kus=inp.nextInt();
         System.out.println("Kümenin kaç elemanlı kombinasyonu alınacak?");
@@ -36,7 +57,7 @@ public class Main {
             }
         } else {
                 System.out.println("Bu kümenin kombinasyonu alınamaz!");
-        }
+        }*/
 
     }
 
